@@ -11,7 +11,6 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "cSpell.words": [
-    "Keyrus",
-    "nivo"
+    "nestjs",
   ]
 }

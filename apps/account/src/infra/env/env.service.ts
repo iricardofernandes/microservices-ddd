@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common'
-// biome-ignore lint/style/useImportType: <explanation>
 import { ConfigService } from '@nestjs/config'
 import type { Env } from './env'
 

@@ -2,7 +2,8 @@
   "extends": "@ms/typescript-config/node.json",
   "include": [
     "src/**/*",
-    "@types/*.d.ts"
+    "@types/*.d.ts",
+    "vitest.config.e2e.mts"
   ],
   "compilerOptions": {
     "module": "NodeNext",
@@ -27,5 +28,8 @@
         "./src/*"
       ]
     },
+    "types": [
+      "vitest/globals"
+    ]
   }
 }

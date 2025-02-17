@@ -3,7 +3,8 @@
   "include": [
     "src/**/*",
     "@types/*.d.ts",
-    "vitest.config.e2e.mts"
+    "vitest.config.e2e.mts",
+    "test"
   ],
   "compilerOptions": {
     "module": "NodeNext",

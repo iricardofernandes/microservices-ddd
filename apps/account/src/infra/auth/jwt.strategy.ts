@@ -1,4 +1,4 @@
-import type { EnvService } from '@/infra/env/env.service'
+import { EnvService } from '@/infra/env/env.service'
 import { Injectable } from '@nestjs/common'
 import { PassportStrategy } from '@nestjs/passport'
 import { ExtractJwt, Strategy } from 'passport-jwt'

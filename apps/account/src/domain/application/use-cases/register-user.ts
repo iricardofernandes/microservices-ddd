@@ -1,7 +1,7 @@
 import { User } from '@/domain/enterprise/entities/user'
-import { type Either, left, right } from '@ms/core'
-import type { HashGenerator } from '../cryptography/hash-generator'
-import type { UsersRepository } from '../repositories/users-repository'
+import { Either, left, right } from '@ms/core'
+import { HashGenerator } from '../cryptography/hash-generator'
+import { UsersRepository } from '../repositories/users-repository'
 import { UserAlreadyExistsError } from './errors/user-already-existis'
 
 interface RegisterUserUseCaseRequest {

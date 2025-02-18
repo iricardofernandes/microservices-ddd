@@ -1,4 +1,4 @@
-import type { User } from '@/domain/enterprise/entities/user'
+import { User } from '@/domain/enterprise/entities/user'
 
 export abstract class UsersRepository {
   abstract findByEmail(email: string): Promise<User | null>

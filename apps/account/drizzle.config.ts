@@ -1,5 +1,7 @@
 import type { Config } from 'drizzle-kit'
-import { env } from './src/infra/env/env'
+import { loadEnvConfig } from './src/infra/env/env'
+
+const env = loadEnvConfig()
 
 export default {
   schema: './src/infra/database/drizzle/schema/index.ts',

@@ -9,6 +9,9 @@
     "lineWidth": 80
   },
   "javascript": {
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    },
     "formatter": {
       "arrowParentheses": "asNeeded",
       "jsxQuoteStyle": "double",
@@ -29,7 +32,8 @@
         "noSvgWithoutTitle": "warn"
       },
       "complexity": {
-        "noForEach": "warn"
+        "noForEach": "warn",
+        "noStaticOnlyClass": "off"
       },
       "correctness": {
         "noUnusedImports": "error"

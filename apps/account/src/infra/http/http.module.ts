@@ -1,17 +1,21 @@
+import { RegisterUserUseCase } from '@/domain/application/use-cases/register-user'
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
 import { Module } from '@nestjs/common'
 import { GraphQLModule } from '@nestjs/graphql'
+import { CryptographyModule } from '../cryptography/cryptography.module'
 import { DatabaseModule } from '../database/database.module'
-import { TestResolver } from './graphql/resolvers/test.resolver'
+import { RegisterUserResolver } from './graphql/resolvers/register-user.resolver'
+import { HealthCheckResolver } from './graphql/resolvers/test.resolver'
 
 @Module({
   imports: [
     DatabaseModule,
+    CryptographyModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       autoSchemaFile: true,
       driver: ApolloDriver,
     }),
   ],
-  providers: [TestResolver],
+  providers: [HealthCheckResolver, RegisterUserResolver, RegisterUserUseCase],
 })
 export class HttpModule {}

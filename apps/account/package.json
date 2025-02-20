@@ -29,6 +29,7 @@
     "@nestjs/jwt": "^11.0.0",
     "@nestjs/passport": "^11.0.5",
     "@nestjs/platform-express": "^11.0.1",
+    "bcryptjs": "^3.0.2",
     "drizzle-orm": "^0.39.3",
     "graphql": "^16.10.0",
     "passport-jwt": "^4.0.1",

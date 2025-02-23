@@ -39,6 +39,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.5.0",
     "@ms/core": "workspace:*",
     "@ms/typescript-config": "workspace:*",
     "@nestjs/cli": "^11.0.0",

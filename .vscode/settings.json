@@ -11,6 +11,8 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "cSpell.words": [
-    "nestjs",
+    "encrypter",
+    "Encrypter",
+    "nestjs"
   ]
 }

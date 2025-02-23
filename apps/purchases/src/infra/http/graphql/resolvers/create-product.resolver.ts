@@ -1,12 +1,10 @@
 import { CreateProductUseCase } from '@/domain/application/use-cases/create-product'
-import { Public } from '@/infra/auth/public'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { GraphQLError } from 'graphql'
 import { CreateProductInput } from '../dto/input/create-product.input'
 import { ProductModel } from '../dto/models/product.model'
 
 @Resolver()
-@Public()
 export class CreateProductResolver {
   constructor(private createProductUseCase: CreateProductUseCase) {}
 

@@ -7,7 +7,7 @@ import request from 'supertest'
 import { UserFactory } from 'test/factories/make-user'
 import { beforeAll } from 'vitest'
 
-describe('Register User Resolver (e2e)', () => {
+describe('Authenticate User Resolver (e2e)', () => {
   let app: INestApplication
   let userFactory: UserFactory
 
@@ -24,7 +24,7 @@ describe('Register User Resolver (e2e)', () => {
     await app.init()
   })
 
-  it('(Mutation) registerUser', async () => {
+  it('(Mutation) authenticateUser', async () => {
     await userFactory.makeDrizzleUser({
       email: 'johndoe@example.com',
       password: await hash('123456', 8),
@@ -36,8 +36,7 @@ describe('Register User Resolver (e2e)', () => {
         query: `
           mutation AuthenticateUser($data: AuthenticateUserInput!) {
             authenticateUser(data: $data) {
-              email
-              password
+              accessToken
             }
           }
         `,
@@ -51,7 +50,7 @@ describe('Register User Resolver (e2e)', () => {
       .expect(200)
 
     const {
-      data: { registerUser: output },
+      data: { authenticateUser: output },
     } = response.body
 
     expect(output).toMatchObject({

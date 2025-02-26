@@ -26,7 +26,7 @@ describe('Authenticate User Resolver (e2e)', () => {
 
   it('(Mutation) authenticateUser', async () => {
     await userFactory.makeDrizzleUser({
-      email: 'johndoe@example.com',
+      email: 'user@auth.com',
       password: await hash('123456', 8),
     })
 
@@ -42,7 +42,7 @@ describe('Authenticate User Resolver (e2e)', () => {
         `,
         variables: {
           data: {
-            email: 'johndoe@example.com',
+            email: 'user@auth.com',
             password: '123456',
           },
         },

@@ -48,8 +48,6 @@ export class AuthenticateUserUseCase {
       sub: user.id.toString(),
     })
 
-    console.log('accessToken', accessToken)
-
     return right({
       accessToken,
     })

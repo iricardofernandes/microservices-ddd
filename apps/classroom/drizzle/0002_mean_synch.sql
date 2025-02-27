@@ -1,0 +1,1 @@
+ALTER TABLE "students" ALTER COLUMN "auth_user_id" SET NOT NULL;

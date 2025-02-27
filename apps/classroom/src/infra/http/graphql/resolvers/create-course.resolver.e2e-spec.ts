@@ -7,6 +7,7 @@ import { DatabaseModule } from '@/infra/database/database.module'
 
 describe('Create Course Resolver (e2e)', () => {
   let app: INestApplication
+  let userFactory: UserFactory
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
@@ -19,13 +20,13 @@ describe('Create Course Resolver (e2e)', () => {
     await app.init()
   })
 
-  it('(Mutation) createProduct', async () => {
+  it('(Mutation) createCourse', async () => {
     const response = await request(app.getHttpServer())
       .post('/graphql')
       .send({
         query: `
-          mutation CreateProduct($data: CreateProductInput!) {
-            createProduct(data: $data) {
+          mutation CreateCourse($data: CreateCourseInput!) {
+            createCourse(data: $data) {
               title
             }
           }
@@ -36,10 +37,11 @@ describe('Create Course Resolver (e2e)', () => {
           },
         },
       })
-      .expect(200)
+
+    console.log(response.body)
 
     const {
-      data: { createProduct: output },
+      data: { createCourse: output },
     } = response.body
 
     expect(output).toMatchObject({

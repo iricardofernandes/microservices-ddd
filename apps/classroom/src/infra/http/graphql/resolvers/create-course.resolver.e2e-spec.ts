@@ -7,7 +7,6 @@ import { DatabaseModule } from '@/infra/database/database.module'
 
 describe('Create Course Resolver (e2e)', () => {
   let app: INestApplication
-  let userFactory: UserFactory
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({

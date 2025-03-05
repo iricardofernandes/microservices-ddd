@@ -3,7 +3,7 @@ import { Optional } from '@/core/types/optional'
 import { UniqueEntityID } from '@/core/unique-entity-id'
 
 export interface CustomerProps {
-  authUserId?: string
+  authUserId: string
   createdAt: Date
   updatedAt?: Date | null
 }

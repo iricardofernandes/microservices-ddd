@@ -5,7 +5,7 @@ import { Module } from '@nestjs/common'
 import { GraphQLModule } from '@nestjs/graphql'
 import { CryptographyModule } from '../cryptography/cryptography.module'
 import { DatabaseModule } from '../database/database.module'
-import { CreateCustomerResolver } from './graphql/resolvers/create-costumer.resolver'
+import { CreateCustomerResolver } from './graphql/resolvers/create-customer.resolver'
 import { CreateProductResolver } from './graphql/resolvers/create-product.resolver'
 import { HealthCheckResolver } from './graphql/resolvers/test.resolver'
 

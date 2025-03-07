@@ -19,38 +19,32 @@ describe('Create Product Resolver (e2e)', () => {
     await app.init()
   })
 
-  it('(Mutation) registerUser', async () => {
+  it('(Mutation) createProduct', async () => {
     const response = await request(app.getHttpServer())
       .post('/graphql')
       .send({
         query: `
-          mutation RegisterUser($data: RegisterUserInput!) {
-            registerUser(data: $data) {
-              id
-              name
-              email
-              createdAt
+          mutation CreateProduct($data: CreateProductInput!) {
+            createProduct(data: $data) {
+              title
             }
           }
         `,
         variables: {
           data: {
-            name: 'John Doe',
-            email: 'johndoe@example.com',
-            password: '123456',
+            title: 'Course Example',
           },
         },
       })
       .expect(200)
 
     const {
-      data: { registerUser: output },
+      data: { createProduct: output },
     } = response.body
 
     expect(output).toMatchObject({
-      id: expect.any(String),
-      name: 'John Doe',
-      email: 'johndoe@example.com',
+      title: 'Course Example',
+      slug: 'course-example',
     })
   })
 })

@@ -8,6 +8,13 @@
       "when": 1740199026687,
       "tag": "0000_wise_onslaught",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1741745558337,
+      "tag": "0001_pretty_blazing_skull",
+      "breakpoints": true
     }
   ]
 }

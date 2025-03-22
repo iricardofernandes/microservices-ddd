@@ -4,6 +4,10 @@ import { Field, InputType } from '@nestjs/graphql'
 export class CreatePurchaseInput {
   @Field()
   customerId: string
-  purchaseId: string
-  status: string
+
+  @Field()
+  productId: string
+
+  @Field()
+  status: 'PENDING' | 'APPROVED' | 'FAILED'
 }

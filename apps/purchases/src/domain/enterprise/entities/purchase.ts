@@ -3,8 +3,8 @@ import { Optional } from '@/core/types/optional'
 import { UniqueEntityID } from '@/core/unique-entity-id'
 
 export interface PurchaseProps {
-  customerId: UniqueEntityID
-  productId: UniqueEntityID
+  customerId: string
+  productId: string
   status: 'PENDING' | 'APPROVED' | 'FAILED'
   createdAt: Date
   updatedAt?: Date | null

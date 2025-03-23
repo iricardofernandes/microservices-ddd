@@ -1,5 +1,4 @@
 import { Either, right } from '@/core/either'
-import { UniqueEntityID } from '@/core/unique-entity-id'
 import { Purchase } from '@/domain/enterprise/entities/purchase'
 import { Injectable } from '@nestjs/common'
 import { PurchasesRepository } from '../repositories/purchases-repository'
@@ -27,8 +26,8 @@ export class CreatePurchaseUseCase {
     status,
   }: CreatePurchaseUseCaseRequest): Promise<CreatePurchaseUseCaseResponse> {
     const purchase = Purchase.create({
-      customerId: new UniqueEntityID(customerId),
-      productId: new UniqueEntityID(productId),
+      customerId: customerId,
+      productId: productId,
       status,
     })
 

@@ -6,8 +6,8 @@ export class DrizzlePurchaseMapper {
   static toDomain(raw: typeof purchases.$inferSelect): Purchase {
     return Purchase.create(
       {
-        customerId: new UniqueEntityID(raw.customerId),
-        productId: new UniqueEntityID(raw.productId),
+        customerId: raw.customerId,
+        productId: raw.productId,
         status: raw.status,
       },
       new UniqueEntityID(raw.id)

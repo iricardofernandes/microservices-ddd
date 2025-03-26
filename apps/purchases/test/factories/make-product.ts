@@ -9,7 +9,7 @@ export function makeProduct(
   const product = Product.create(
     {
       title: 'test',
-      slug: new Slug('test'),
+      slug: Slug.createFromText('test'),
       ...override,
     },
     id

@@ -30,7 +30,8 @@ export class ProductFactory {
 
     await this.drizzle.db.insert(products).values({
       id: product.id.toString(),
-      authUserId: product.authUserId,
+      title: product.title,
+      slug: product.slug.toString(),
       createdAt: new Date(),
     })
 

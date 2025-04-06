@@ -12,11 +12,13 @@ describe('Create Enrollment', () => {
     sut = new CreateEnrollmentUseCase(inMemoryEnrollmentsRepository)
   })
 
-  const authUserId = new UniqueEntityID().toString()
+  const studentId = new UniqueEntityID().toString()
+  const courseId = new UniqueEntityID().toString()
 
   it('should be able to create a enrollment', async () => {
     const result = await sut.execute({
-      authUserId,
+      studentId,
+      courseId,
     })
 
     expect(result.isRight()).toBe(true)
@@ -26,7 +28,8 @@ describe('Create Enrollment', () => {
     expect(inMemoryEnrollmentsRepository.items).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          authUserId: authUserId,
+          studentId,
+          courseId,
         }),
       ])
     )

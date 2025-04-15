@@ -25,6 +25,11 @@ import { DrizzleStudentsRepository } from './drizzle/repositories/drizzle-studen
       useClass: DrizzleEnrollmentsRepository,
     },
   ],
-  exports: [DrizzleService, StudentsRepository, CoursesRepository],
+  exports: [
+    DrizzleService,
+    StudentsRepository,
+    CoursesRepository,
+    EnrollmentsRepository,
+  ],
 })
 export class DatabaseModule {}

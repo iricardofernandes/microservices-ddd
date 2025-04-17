@@ -9,7 +9,6 @@ import { DatabaseModule } from '../database/database.module'
 import { CreateCourseResolver } from './graphql/resolvers/create-course.resolver'
 import { CreateEnrollmentResolver } from './graphql/resolvers/create-enrollment.resolver'
 import { CreateStudentResolver } from './graphql/resolvers/create-student.resolver'
-import { HealthCheckResolver } from './graphql/resolvers/test.resolver'
 
 @Module({
   imports: [
@@ -21,7 +20,6 @@ import { HealthCheckResolver } from './graphql/resolvers/test.resolver'
     }),
   ],
   providers: [
-    HealthCheckResolver,
     CreateStudentResolver,
     CreateStudentUseCase,
     CreateCourseResolver,

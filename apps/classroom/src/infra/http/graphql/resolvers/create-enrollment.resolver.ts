@@ -15,7 +15,9 @@ export class CreateEnrollmentResolver {
     const result = await this.createEnrollmentUseCase.execute(data)
 
     if (result.isLeft()) {
-      throw new GraphQLError('Enrollment with same auth user id already exists')
+      throw new GraphQLError(
+        'Enrollment with same studentId and courseId already exists'
+      )
     }
 
     const { enrollment } = result.value

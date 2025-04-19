@@ -9,7 +9,6 @@ import { DatabaseModule } from '../database/database.module'
 import { CreateCustomerResolver } from './graphql/resolvers/create-customer.resolver'
 import { CreateProductResolver } from './graphql/resolvers/create-product.resolver'
 import { CreatePurchaseResolver } from './graphql/resolvers/create-purchase.resolver'
-import { HealthCheckResolver } from './graphql/resolvers/test.resolver'
 
 @Module({
   imports: [
@@ -21,7 +20,6 @@ import { HealthCheckResolver } from './graphql/resolvers/test.resolver'
     }),
   ],
   providers: [
-    HealthCheckResolver,
     CreateCustomerResolver,
     CreateCustomerUseCase,
     CreateProductResolver,

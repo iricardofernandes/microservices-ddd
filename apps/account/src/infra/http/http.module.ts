@@ -7,7 +7,6 @@ import { CryptographyModule } from '../cryptography/cryptography.module'
 import { DatabaseModule } from '../database/database.module'
 import { AuthenticateUserResolver } from './graphql/resolvers/authenticate-user.resolver'
 import { RegisterUserResolver } from './graphql/resolvers/register-user.resolver'
-import { HealthCheckResolver } from './graphql/resolvers/test.resolver'
 
 @Module({
   imports: [
@@ -19,7 +18,6 @@ import { HealthCheckResolver } from './graphql/resolvers/test.resolver'
     }),
   ],
   providers: [
-    HealthCheckResolver,
     RegisterUserResolver,
     RegisterUserUseCase,
     AuthenticateUserResolver,

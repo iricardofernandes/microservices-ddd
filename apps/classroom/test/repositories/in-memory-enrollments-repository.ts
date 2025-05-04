@@ -4,8 +4,12 @@ import { Enrollment } from '@/domain/enterprise/entities/enrollment'
 export class InMemoryEnrollmentsRepository implements EnrollmentsRepository {
   public items: Enrollment[] = []
 
-  async getEnrollmentsByStudentId(studentId: string): Promise<Enrollment[]> {
-    throw new Error('Method not implemented.')
+  async getEnrollmentsByStudentId(studentId: string) {
+    const enrollments = this.items.filter(
+      item => item.studentId.toString() === studentId
+    )
+
+    return enrollments
   }
 
   async create(enrollment: Enrollment) {

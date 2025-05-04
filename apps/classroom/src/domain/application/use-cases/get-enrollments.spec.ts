@@ -1,7 +1,11 @@
+import { makeEnrollment } from 'test/factories/make-enrollment'
+import { makeStudent } from 'test/factories/make-student'
 import { InMemoryEnrollmentsRepository } from 'test/repositories/in-memory-enrollments-repository'
+import { InMemoryStudentsRepository } from 'test/repositories/in-memory-students-repository'
 import { GetEnrollmentsUseCase } from './get-enrollments'
 
 let inMemoryEnrollmentsRepository: InMemoryEnrollmentsRepository
+let inMemoryStudentsRepository: InMemoryStudentsRepository
 let sut: GetEnrollmentsUseCase
 
 describe('Get Enrollments', () => {
@@ -10,30 +14,14 @@ describe('Get Enrollments', () => {
     sut = new GetEnrollmentsUseCase(inMemoryEnrollmentsRepository)
   })
 
-  it('should be able to get a enrollment by slug', async () => {
-    const student = makeStudent({ name: 'John Doe' })
+  it('should be able to get a enrollment by student id', async () => {
+    const student = makeStudent()
 
     inMemoryStudentsRepository.items.push(student)
 
-    const newEnrollment = makeEnrollment({
-      authorId: student.id,
-      slug: Slug.create('example-enrollment'),
-    })
+    const newEnrollment = makeEnrollment()
 
     await inMemoryEnrollmentsRepository.create(newEnrollment)
-
-    const attachment = makeAttachment({
-      title: 'Some attachment',
-    })
-
-    inMemoryAttachmentsRepository.items.push(attachment)
-
-    inMemoryEnrollmentAttachmentsRepository.items.push(
-      makeEnrollmentAttachment({
-        attachmentId: attachment.id,
-        enrollmentId: newEnrollment.id,
-      })
-    )
 
     const result = await sut.execute({
       slug: 'example-enrollment',

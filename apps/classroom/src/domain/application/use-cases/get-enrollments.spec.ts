@@ -24,18 +24,12 @@ describe('Get Enrollments', () => {
     await inMemoryEnrollmentsRepository.create(newEnrollment)
 
     const result = await sut.execute({
-      slug: 'example-enrollment',
+      studentId: student.id.toString(),
     })
 
     expect(result.value).toMatchObject({
       enrollment: expect.objectContaining({
-        title: newEnrollment.title,
-        author: 'John Doe',
-        attachments: [
-          expect.objectContaining({
-            title: 'Some attachment',
-          }),
-        ],
+        studentId: newEnrollment.studentId,
       }),
     })
   })

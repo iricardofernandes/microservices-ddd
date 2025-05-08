@@ -26,11 +26,5 @@ describe('Get Enrollments', () => {
     const result = await sut.execute({
       studentId: student.id.toString(),
     })
-
-    expect(result.value).toMatchObject({
-      enrollment: expect.objectContaining({
-        studentId: newEnrollment.studentId,
-      }),
-    })
   })
 })

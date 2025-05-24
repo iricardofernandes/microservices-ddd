@@ -26,5 +26,7 @@ describe('Get Enrollments', () => {
     const result = await sut.execute({
       studentId: student.id.toString(),
     })
+
+    expect(result.isRight()).toBe(true)
   })
 })

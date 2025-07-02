@@ -27,6 +27,6 @@ describe('Get Enrollments', () => {
       studentId: student.id.toString(),
     })
 
-    // expect(result.isRight()).toBe(true)
+    expect(result.isRight()).toBe(true)
   })
 })
